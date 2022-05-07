@@ -17,9 +17,9 @@ def get_url(message):
     sent = bot.reply_to(message, 'Привет, отправь ссылку для отслеживания')
     bot.register_next_step_handler(sent, get_price)
 
-def get_price(message):                                                          # Получаем HTML по ссылке
+def get_price(message):                                                          # Проверка на корректность ссылки и получение цены
     message_save = message.text
-    if 'http' in message_save:
+    try:
         browser = webdriver.Firefox()
         browser.get(message_save)
         time.sleep(5)
@@ -28,8 +28,10 @@ def get_price(message):                                                         
         price = int((block_arguments[0]).replace(' ', ''))
         bot.send_message(message.chat.id, f'Цена: {price} р.')
         browser.quit()
-    else:
+    except Exception as e:
         bot.send_message(message.chat.id, 'Не верная ссылка, для повтора нажмите /start')
+        browser.quit()
+        print(e)
 
 
 bot.polling()
