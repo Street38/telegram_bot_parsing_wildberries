@@ -18,11 +18,11 @@ def daily_parsing():
             block_arguments = (block.text).split('₽')
             price = (block_arguments[0]).replace(' ', '')
             if int(price) <= int(list[2]):
-                bot.send_message(list[2], f'Пссс, цена снизилась:{price}\nУспей купить')
+                bot.send_message(list[2], f'Пссс, цена снизилась: {price}р.\nУспей купить {list[1]}')
                 browser.quit()
             browser.quit()
 
-schedule.every().day.at('23:33').do(daily_parsing)
+schedule.every().day.at('23:41').do(daily_parsing)
 while True:
     schedule.run_pending()
     time.sleep(1)

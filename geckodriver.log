@@ -2676,3 +2676,71 @@ DevTools listening on ws://localhost:58542/devtools/browser/58d9294f-ffd6-4d38-9
 1652110386594	Marionette	INFO	Listening on port 58548
 1652110387034	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
 1652110394637	Marionette	INFO	Stopped listening on port 58548
+1652110741002	geckodriver	INFO	Listening on 127.0.0.1:58713
+1652110744093	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "58714" "-no-remote" "-profile" "C:\\Users\\Home\\AppData\\Local\\Temp\\rust_mozprofileOdmiFi"
+[GFX1]: Potential driver version mismatch ignored due to missing DLLs igd10umd64 v= and igd10iumd64 v=
+1652110744597	Marionette	INFO	Marionette enabled
+[GFX1]: Potential driver version mismatch ignored due to missing DLLs igd10umd64 v= and igd10iumd64 v=
+[GFX1-]: Failed to get D3D11VideoDevice: 0x80004002
+[GFX1]: Potential driver version mismatch ignored due to missing DLLs igd10umd64 v= and igd10iumd64 v=
+[GFX1]: Potential driver version mismatch ignored due to missing DLLs igd10umd64 v= and igd10iumd64 v=
+[GFX1]: Potential driver version mismatch ignored due to missing DLLs igd10umd64 v= and igd10iumd64 v=
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Home\\AppData\\Local\\Temp\\rust_mozprofileOdmiFi\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:58714/devtools/browser/ed4dde29-6e3d-40c7-95d7-bc70d1b75087
+1652110746897	Marionette	INFO	Listening on port 58720
+1652110747302	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1652110755331	Marionette	INFO	Stopped listening on port 58720
+1652110800645	geckodriver	INFO	Listening on 127.0.0.1:58809
+1652110803719	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "58810" "-no-remote" "-profile" "C:\\Users\\Home\\AppData\\Local\\Temp\\rust_mozprofileku104F"
+[GFX1]: Potential driver version mismatch ignored due to missing DLLs igd10umd64 v= and igd10iumd64 v=
+1652110804407	Marionette	INFO	Marionette enabled
+[GFX1]: Potential driver version mismatch ignored due to missing DLLs igd10umd64 v= and igd10iumd64 v=
+[GFX1-]: Failed to get D3D11VideoDevice: 0x80004002
+[GFX1]: Potential driver version mismatch ignored due to missing DLLs igd10umd64 v= and igd10iumd64 v=
+[GFX1]: Potential driver version mismatch ignored due to missing DLLs igd10umd64 v= and igd10iumd64 v=
+[GFX1]: Potential driver version mismatch ignored due to missing DLLs igd10umd64 v= and igd10iumd64 v=
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Home\\AppData\\Local\\Temp\\rust_mozprofileku104F\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:58810/devtools/browser/ec5efb10-93ef-498b-9ad3-1758f1eb4a2d
+1652110806985	Marionette	INFO	Listening on port 58815
+1652110807437	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1652110815377	Marionette	INFO	Stopped listening on port 58815
+
+###!!! [Parent][PContentParent] Error: Send(msgname=PContent::Msg_DestroyBrowsingContextGroup) Closed channel: cannot send/recv
+
+
+###!!! [Child][PContentChild] Error: RunMessage(msgname=PContent::Reply_DiscardBrowsingContext) Channel closing: too late to send/recv, messages will be lost
+
+1652110860907	geckodriver	INFO	Listening on 127.0.0.1:58897
+1652110864014	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "58898" "-no-remote" "-profile" "C:\\Users\\Home\\AppData\\Local\\Temp\\rust_mozprofilew3XsoS"
+[GFX1]: Potential driver version mismatch ignored due to missing DLLs igd10umd64 v= and igd10iumd64 v=
+1652110864553	Marionette	INFO	Marionette enabled
+[GFX1]: Potential driver version mismatch ignored due to missing DLLs igd10umd64 v= and igd10iumd64 v=
+[GFX1-]: Failed to get D3D11VideoDevice: 0x80004002
+[GFX1]: Potential driver version mismatch ignored due to missing DLLs igd10umd64 v= and igd10iumd64 v=
+[GFX1]: Potential driver version mismatch ignored due to missing DLLs igd10umd64 v= and igd10iumd64 v=
+[GFX1]: Potential driver version mismatch ignored due to missing DLLs igd10umd64 v= and igd10iumd64 v=
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Home\\AppData\\Local\\Temp\\rust_mozprofilew3XsoS\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:58898/devtools/browser/003f0121-3c85-4ddb-a248-498dd3747211
+1652110866861	Marionette	INFO	Listening on port 58906
+1652110867219	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1652110875407	Marionette	INFO	Stopped listening on port 58906
+
+###!!! [Parent][PContentParent] Error: Send(msgname=PContent::Msg_DestroyBrowsingContextGroup) Closed channel: cannot send/recv
+
+
+###!!! [Child][PContentChild] Error: Send(msgname=PBrowser::Msg___delete__) Channel closing: too late to send/recv, messages will be lost
+
+1652111112559	geckodriver	INFO	Listening on 127.0.0.1:59042
+1652111115653	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "59043" "-no-remote" "-profile" "C:\\Users\\Home\\AppData\\Local\\Temp\\rust_mozprofilesO1dCk"
+[GFX1]: Potential driver version mismatch ignored due to missing DLLs igd10umd64 v= and igd10iumd64 v=
+1652111116146	Marionette	INFO	Marionette enabled
+[GFX1]: Potential driver version mismatch ignored due to missing DLLs igd10umd64 v= and igd10iumd64 v=
+[GFX1-]: Failed to get D3D11VideoDevice: 0x80004002
+[GFX1]: Potential driver version mismatch ignored due to missing DLLs igd10umd64 v= and igd10iumd64 v=
+[GFX1]: Potential driver version mismatch ignored due to missing DLLs igd10umd64 v= and igd10iumd64 v=
+[GFX1]: Potential driver version mismatch ignored due to missing DLLs igd10umd64 v= and igd10iumd64 v=
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Home\\AppData\\Local\\Temp\\rust_mozprofilesO1dCk\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:59043/devtools/browser/4a8c9a27-73c0-4e48-b1c9-31432cce4638
+1652111118452	Marionette	INFO	Listening on port 59048
+1652111118876	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1652111126301	Marionette	INFO	Stopped listening on port 59048
