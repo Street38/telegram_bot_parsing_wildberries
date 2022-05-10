@@ -23,7 +23,7 @@ def daily_parsing():
                 browser.quit()
             browser.quit()
 
-schedule.every().day.at('12:30').do(daily_parsing)
+schedule.every().day.at('18:48').do(daily_parsing)
 while True:
     schedule.run_pending()
     time.sleep(1)

@@ -2,6 +2,7 @@ import telebot
 from token_bot import TOKEN
 from selenium import webdriver
 import time
+from telebot import types
 
 
 bot = telebot.TeleBot(TOKEN)
@@ -9,11 +10,21 @@ bot = telebot.TeleBot(TOKEN)
 LIST_REPLY = []
 
 @bot.message_handler(commands=['start'])
+def keyboard(message):
+    startboard = types.ReplyKeyboardMarkup(resize_keyboard= True, row_width= 3)
+    create = types.KeyboardButton(text='Добавить товар')
+    edit = types.KeyboardButton(text='Редактировать')
+    delete = types.KeyboardButton(text='Удалить')
+    startboard.add(create, edit, delete)
+    bot.send_message(message.chat.id, 'Привет, я бот который помогает сделать покупки на www.wildberries.ru в нужный '
+                                      'момент🎁, выбери действие', reply_markup=startboard)
+
+
+@bot.message_handler(func= lambda m: m.text == 'Добавить товар')
 def get_url(message):
     LIST_REPLY.clear()
     try:
-        sent = bot.reply_to(message, 'Привет, я бот который помогает сделать покупки на www.wildberries.ru в нужный момент🎁\n'
-                                 'Отправь мне ссылку на товар и я тебе напишу как цена снизится')
+        sent = bot.reply_to(message, 'Отправь мне ссылку на товар и я тебе напишу как цена снизится')
         bot.register_next_step_handler(sent, request_link)
     except Exception as e:
         print(f'Ошибка в функции get_url {e}')
