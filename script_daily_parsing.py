@@ -9,7 +9,6 @@ bot = telebot.TeleBot(TOKEN)
 def daily_parsing():
     with open('links.txt', 'r+') as file:
         for i in file:
-            print('START')
             list = i.split()
             browser = webdriver.Firefox()
             browser.get(list[1])
@@ -18,11 +17,13 @@ def daily_parsing():
             block_arguments = (block.text).split('₽')
             price = (block_arguments[0]).replace(' ', '')
             if int(price) <= int(list[2]):
-                bot.send_message(list[2], f'Пссс, цена снизилась: {price}р.\nУспей купить {list[1]}')
+                bot.send_message(list[2], f'<b>Пссс, цена снизилась.\n'
+                                          f'Сейчас цена: {price}р.🎊\nУспей купить {list[1]}</b>',
+                                            parse_mode="HTML")
                 browser.quit()
             browser.quit()
 
-schedule.every().day.at('23:41').do(daily_parsing)
+schedule.every().day.at('12:30').do(daily_parsing)
 while True:
     schedule.run_pending()
     time.sleep(1)

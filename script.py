@@ -2,7 +2,7 @@ import telebot
 from token_bot import TOKEN
 from selenium import webdriver
 import time
-import schedule
+
 
 bot = telebot.TeleBot(TOKEN)
 
@@ -11,9 +11,12 @@ LIST_REPLY = []
 @bot.message_handler(commands=['start'])
 def get_url(message):
     LIST_REPLY.clear()
-    sent = bot.reply_to(message, 'Привет, я бот который помогает сделать покупки в нужный момент;), '
-                                 'отправь мне ссылку на товар')
-    bot.register_next_step_handler(sent, request_link)
+    try:
+        sent = bot.reply_to(message, 'Привет, я бот который помогает сделать покупки на www.wildberries.ru в нужный момент🎁\n'
+                                 'Отправь мне ссылку на товар и я тебе напишу как цена снизится')
+        bot.register_next_step_handler(sent, request_link)
+    except Exception as e:
+        print(f'Ошибка в функции get_url {e}')
 
 def request_link(message):
     try:
@@ -40,7 +43,7 @@ def request_update_interval(message):
         LIST_REPLY.append(price)
         if save_data():
             bot.send_message(message.chat.id, f'Отслеживание успешно запущено.\nТекущая цена: {price} р.'
-                                              f'\nУведомление сработает при цене {LIST_REPLY[2]}р. и ниже')
+                                              f'\nУведомление сработает при цене {LIST_REPLY[3]}р. и ниже')
         browser.quit()
     except Exception as e:
         bot.send_message(message.chat.id, 'Не верная ссылка, либо такого товара не существует. '
@@ -59,27 +62,4 @@ def save_data():
                                             'Отредактировать мои отслеживания: /edit')
 
 
-def daily_parsing():
-    with open('links.txt', 'r+') as file:
-        for i in file:
-            print('START')
-            list = i.split()
-            browser = webdriver.Firefox()
-            browser.get(list[1])
-            time.sleep(5)
-            block = browser.find_element_by_class_name('same-part-kt__price-block')
-            block_arguments = (block.text).split('₽')
-            price = (block_arguments[0]).replace(' ', '')
-            if int(price) <= int(list[2]):
-                bot.send_message(list[2], f'Пссс, цена снизилась: {price}р.\nУспей купить {list[1]}')
-                browser.quit()
-            browser.quit()
-
-schedule.every().day.at('23:49').do(daily_parsing)
-while True:
-    schedule.run_pending()
-    time.sleep(1)
-    bot.polling()
-
-
-#bot.polling()
+bot.polling()
